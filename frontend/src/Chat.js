@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 function Chat(props) {
-  const { socket, userName, room,chatList} = props;
+  const { socket, userName, room, chatList } = props;
   const [message, setMessage] = useState("");
-  const[author, setAuthor] = useState(true)
+  const [author, setAuthor] = useState(true);
   // const [chatList, setChatList] = useState([]);
 
-  const sendMessage =  (e) => {
+  const sendMessage = (e) => {
     e.preventDefault();
     console.log("clear input", message);
     // clearing the values
@@ -22,19 +22,19 @@ function Chat(props) {
           ":" +
           new Date(Date.now()).getMinutes(),
       };
-      socket.emit("send_message",(messageData));
-      
+      socket.emit("send_message", messageData);
+
       // socket.on("receive_message", (data) => {
       //   // setChatList((list) => [...list, messageData]);
       //   console.log("senddddddd", data);
       //   });
     }
-   
-    if (author===author) {
-      console.log("sameeeeeeeeeeeee", author)
-      setAuthor(false)
+
+    if (author === author) {
+      console.log("sameeeeeeeeeeeee", author);
+      setAuthor(false);
     }
-  }; 
+  };
   // useEffect(()=>{
   //   if (author!==message.author) {
   //     console.log("ASDFGHJsameeeeeeeeeeeee", author)
@@ -46,15 +46,12 @@ function Chat(props) {
   //   // setAuthor(false);
   // },[])
 
-
-
   // useEffect(() => {
   //   socket.on("receive_message", (data) => {
   //     console.log("asasasas", data);
   //     // setChatList((list) => [...list, data]);
   //   });
   // }, [socket]);
-
 
   // socket.on("receive_message", (data) => {
   //   console.log("wewewewewe", data);
@@ -70,23 +67,35 @@ function Chat(props) {
         {chatList.map((listOfMessage) => {
           return (
             <>
-            <div className={userName === listOfMessage.author ? "leftbox" : "rightbox"} >
-             <div className={userName === listOfMessage.author ? "message msg_by" : "message msg_to"} >
-            <div className="message-content " >
-              {listOfMessage.message}
-            </div>
-            {/* <div className="message" >
+              <div
+                className={
+                  userName === listOfMessage.author ? "leftbox" : "rightbox"
+                }
+              >
+                <div
+                  className={
+                    userName === listOfMessage.author
+                      ? "message msg_by"
+                      : "message msg_to"
+                  }
+                >
+                  <div className="message-content ">
+                    {listOfMessage.message}
+                  </div>
+                  {/* <div className="message" >
             {listOfMessage.message}
           </div> */}
-          <div className="para">
-          {setAuthor ? 
-          <p className="author" >{listOfMessage.author}</p>
-        :""}
-          <p className="time">{listOfMessage.time}</p>
-          </div>
-          </div> 
-            </div>
-          </>
+                  <div className="para">
+                    {setAuthor ? (
+                      <p className="author">{listOfMessage.author}</p>
+                    ) : (
+                      ""
+                    )}
+                    <p className="time">{listOfMessage.time}</p>
+                  </div>
+                </div>
+              </div>
+            </>
           );
         })}
       </div>

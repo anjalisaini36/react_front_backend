@@ -1,16 +1,13 @@
-.App{
+.App {
   text-align: center;
 }
 .Chat {
-  
   text-align: center;
 }
 
-
-
 body {
   /* background-color: gray; */
-    background-image: linear-gradient(violet,blue);
+  background-image: linear-gradient(violet, blue);
 }
 
 .container {
@@ -18,12 +15,12 @@ body {
   margin: auto;
   border-radius: 6px;
   border: 2px solid black;
-  background-image: linear-gradient(violet,blue);
+  background-image: linear-gradient(violet, blue);
   height: 455px;
-  overflow-y:  auto;
+  overflow-y: auto;
 }
 
-.message{
+.message {
   /* width: 250px; */
   width: auto;
   height: auto;
@@ -37,7 +34,7 @@ body {
   word-wrap: break-word;
   display: inline-block;
 }
-.message-content{
+.message-content {
   clear: both;
   /* background-color: #95f195; */
   width: auto;
@@ -50,14 +47,14 @@ body {
   min-width: 100px;
 }
 
-.para{
+.para {
   float: right;
   clear: both;
   display: flex;
   margin: auto;
 }
 
-.author{
+.author {
   margin-right: 5px;
   font-size: bold;
 }
@@ -68,7 +65,6 @@ body {
   border: 2px solid black;
   width: 710px;
   margin-top: 5px;
-  
 }
 
 .send-btn {
@@ -78,7 +74,7 @@ body {
   width: 80px;
 }
 
-.join-btn{
+.join-btn {
   padding: 10px;
   border-radius: 5px;
   border: 2px solid black;
@@ -86,14 +82,13 @@ body {
   margin: 5px;
 }
 
-.msg_to{
+.msg_to {
   background-color: #95adf1;
   word-spacing: normal;
   word-break: break-all;
   justify-content: flex-end;
-
 }
-.msg_by{
+.msg_by {
   background-color: rgb(148, 253, 153);
   word-break: break-all;
   justify-items: flex-start;
@@ -110,5 +105,4 @@ body {
   justify-content: start;
   flex-direction: column;
   align-items: flex-start;
-
 }
