@@ -1,9 +1,7 @@
 import "./App.css";
-import io, { socket } from "socket.io-client";
-import { useEffect, useState } from "react";
+import io from "socket.io-client";
+import { useState } from "react";
 import Chat from "./Chat";
-
-const PORT = 3001;
 
 function App() {
   const [userName, setUserName] = useState("");
@@ -11,7 +9,8 @@ function App() {
   const [showchat, setShowchat] = useState(false);
   const [chatList, setChatList] = useState([]);
 
-  const socket = io.connect(`http://localhost:${PORT}/`);
+  const socket = io.connect(`https://chat-backend-psi.vercel.app/`);
+  
 
   // useEffect(() => {
   //   socket.on("receive_message", (data) => {
@@ -31,7 +30,7 @@ function App() {
       setShowchat(true);
     }
   };
-  return (
+  return ( 
     <div className="App">
       {!showchat ? (
         <>
