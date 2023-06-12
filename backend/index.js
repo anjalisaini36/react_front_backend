@@ -43,4 +43,4 @@ io.on("connection", (socket) => {
     console.log("User Disconnect", socket.id);
   });
 });
-server.listen(PORT, () => console.log(`http://localhost:${PORT}/`));
+server.listen(PORT, () => console.log(`https://localhost:${PORT}/`));
